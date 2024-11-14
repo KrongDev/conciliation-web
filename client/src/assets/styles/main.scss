@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.6;
+  min-height: 100vh; /* Ensure footer stays at the bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 20px;
+  flex-grow: 1; /* Allow content to expand and push footer to the bottom */
+}
+
+// 헤더 스타일
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px; /* Add padding on left and right */
+  border-bottom: 1px solid #ddd;
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #20c997;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: #495057;
+      font-weight: 500;
+      &:hover {
+        color: #20c997;
+      }
+    }
+  }
+}
+
+// 메인 콘텐츠
+.main-content {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+// 게시글 목록 스타일
+.post-list {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  // 가운데 정렬
+
+  .post {
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin: 10px; // 포스트 간의 간격을 설정
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    width: 300px;  // 포스트의 고정 크기 (너비)
+
+    &:hover {
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .post-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #212529;
+    }
+
+    .post-content {
+      font-size: 1rem;
+      color: #495057;
+      margin-top: 10px;
+    }
+
+    .post-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #868e96;
+    }
+  }
+}
+
+// 반응형 스타일
+@media (max-width: 1200px) {
+  .post {
+    width: 250px;  // 화면 크기에 맞춰 포스트 크기 조정
+  }
+}
+
+@media (max-width: 992px) {
+  .post {
+    width: 220px;  // 더 작은 화면에서는 포스트 크기를 더 줄임
+  }
+}
+
+@media (max-width: 768px) {
+  .post {
+    width: 100%;  // 화면 크기가 작아지면 포스트를 전체 너비로 확장
+  }
+}
+
+// 사이드바 스타일
+.sidebar {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+
+  .sidebar-section {
+    margin-bottom: 20px;
+
+    h3 {
+      font-size: 1.2rem;
+      color: #495057;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 10px;
+      margin: 5px;
+      font-size: 0.9rem;
+      background-color: #e9ecef;
+      color: #495057;
+      border-radius: 15px;
+      cursor: pointer;
+      &:hover {
+        background-color: #20c997;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+// 푸터 스타일
+.footer {
+  padding: 20px 0;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #868e96;
+  position: absolute; /* Position it at the bottom */
+  bottom: 0;
+  width: 100%;
+}
+
+// 반응형 스타일
+@media (max-width: 768px) {
+  .header {
+
+    .nav {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  }
+
+  .sidebar {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header .logo {
+    font-size: 1.5rem;
+  }
+
+  .sidebar {
+    padding: 0 5px;
+  }
+
+  .post .post-title {
+    font-size: 1.2rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}

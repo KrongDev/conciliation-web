@@ -1,0 +1,35 @@
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.3s;
+}
+
+.search-icon:hover {
+  transform: scale(1.2); /* 아이콘에 호버 효과 */
+}
+
+.search-input-container {
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: width 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #20c997;  // 포커스 시 색상 변경
+}
